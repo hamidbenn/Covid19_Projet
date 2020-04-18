@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>COVID-19</title>
+         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="./assets/demo/demo.css" rel="stylesheet" />
+  <link href="sb-admin-2.min.css" rel="stylesheet" type="text/css"/>
+  <link href="sb-admin-2.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="s.css" type="text/css" rel="stylesheet" />
+   <script src="js/sb-admin-2.min.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+ <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://materializecss.com/templates/starter-template/js/init.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>   
+
+<link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+<link href="css/theme.css" rel="stylesheet" media="all">
+
+
+  <!--Custom Font-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+        <!-- Custom fonts for this template -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    </head>
+     <div class="header">
+     <h1 style=" color:#1132b8; text-align:center" >COVID-19 Coronavirus Pandemic</h1>
+        <div style="font-size:13px; color:#999; text-align:center">Last updated: Avril 02, 2020, 19:43 GMT</div> 
+        <br>
+        <div style=" font-size:16px; margin-top:20px; margin-bottom:20px">
+        </div>
+   </head>
+    <body id="page-top">
+<center>
+    
+    <div class="row">
+                            
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row">
+                                            <div class="col-3 align-self-center">
+                                                <div class="round bg-success">
+                                                    <span style="color:white"><i class="fas fa-syringe" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-9 align-self-center text-right">
+                                                <div class="m-l-10">
+                                                    <h5 class="mt-0" id="recovered">510666</h5>
+                                                    <p class="mb-0 text-muted">Recovered people</p>
+                                                </div>
+                                            </div>                                                                                          
+                                        </div>
+                                        <div class="progress mt-3" style="height:3px;">
+                                            <div class="progress-bar  bg-success" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div><!--end card-body-->
+                                </div><!--end card-->
+                            </div><!--end col-->
+
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row">
+                                            <div class="col-3 align-self-center">
+                                                <div class="round bg-warning">
+                                                    <span style="color:white"><i class="fas fa-viruses" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-9 text-right align-self-center">
+                                                <div class="m-l-10 ">
+                                                    <h5 class="mt-0" id="confirmed">2083607</h5>
+                                                    <p class="mb-0 text-muted">Confirmed Cases</p>
+                                                </div>
+                                            </div>                                                                                                                
+                                        </div>
+                                        <div class="progress mt-3" style="height:3px;">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div><!--end card-body-->
+                                </div><!--end card-->
+                            </div><!--end col-->
+
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="search-type-arrow"></div>
+                                        <div class="d-flex flex-row">
+                                            <div class="col-3 align-self-center">
+                                                <div class="round " style="background-color: #DC143C;">
+                                                   <span style="color:white"> <i class="fas fa-skull-crossbones" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-9 align-self-center text-right">
+                                                <div class="m-l-10 ">
+                                                    <h5 class="mt-0" id="death">134632</h5>
+                                                    <p class="mb-0 text-muted">Death Cases</p>
+                                                </div>
+                                            </div>                                                                
+                                        </div>
+                                        <div class="progress mt-3" style="height:3px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div><!--end card-body-->
+                                </div><!--end card-->
+                            </div><!--end col-->
+                        </div>
+    
+    <br>
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Total Coronavirus Cases</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Statistiques All Over World</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-primary"></i>Cases
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> Deaths
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-info"></i> Recovered
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+  <div class="wrapper">
+    <div class="main-panel">
+      <!-- Navbar -->
+      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+              <div class="sidebar" hidden>
+                <!--
+                  Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+              -->
+                <div class="sidebar-wrapper" hidden>
+                </div>
+              </div>
+              <div class="main-panel">
+                  
+                  <div class="row">
+          <div class="col-lg-4">
+            <div class="card card-chart">
+              <div class="card-header" >
+                <h3 style="margin-left:5px" class="card-title">Statistiques</h3>
+<canvas id="myChart" width="400" height="400"></canvas>
+        					</div>
+        </div>
+      </div>
+                      
+             <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Total Coronavirus Cases By Continents</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myBarChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+                   
+          
+        </div>
+                
+                <select  class="selectpicker countrypicker"  name="ar" data-live-search="true"  data-flag="true"></select>
+                </div >
+                <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+                <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+                <script src="js/countrypicker.js"></script>
+                <div class="input-field col s6" >
+                  <input id="date_from" type="date" placeholder="From" max="2020-04-09" min="2020-01-21" class="datepicker">
+                </div>
+                <div class="input-field col s6">
+                  <input id="date_to" type="date" placeholder="To" max="2020-04-09" min="2020-01-21" class="datepicker">
+                </div>
+                <button id="filter-button" class="btn-large waves-effect waves-light">Filter</button>
+              </div>
+                <!-- Navbar -->
+                <script >
+                <!-- End Navbar -->  var value;
+                  var b;
+                  $(document).ready(function() {
+
+                  var s = document.getElementsByName('ar')[0];
+                  s.addEventListener("change", changeOrg);
+
+                  function changeOrg(){
+                    var Table = document.getElementById("mytable");
+                    Table.innerHTML = "";
+                    if (s.options[s.selectedIndex]!=null)
+                    {
+                      var val = s.options[s.selectedIndex].value;
+                      console.log(val);
+
+                  //on page load
+                  var _gaq = _gaq || [];
+                  _gaq.push(['_setAccount', 'UA-36251023-1']);
+                  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                  _gaq.push(['_trackPageview']);
+
+                  (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                  })();
+                  /*Dummy Data, Curtosy of: https://www.generatedata.com/*/
+                  $.getJSON( "https://pomber.github.io/covid19/timeseries.json", function( Afghanistan ) {
+                    var Table = document.getElementById("mytable");
+              Table.innerHTML = "";
+                    $.each( Afghanistan, function(key, value) {
+
+                    if (key==val){
+                      for (var i = 0; i < value.length; i++) {
+                        var tr = $('<	<tr class="row100 body"/>');
+                        tr.append('<td class= "cell100 column1" >' + key + "</td>");
+                        tr.append('<td class= "cell100 column2" >'+ value[i].date + "</td>");
+                        tr.append('<td class= "cell100 column3" >' + value[i].confirmed + "</td>");
+                        tr.append('<td class= "cell100 column4" >' + value[i].deaths + "</td>");
+                        tr.append('<td class= "cell100 column5" >' + value[i].recovered + "</td>");
+                        $('.table1').append(tr);
+                        };
+                    $("#filter-button").click(function(e) {
+
+
+                      //Thank You Jesus!!!!!!!!
+
+                      //Gets the form data in a unified manner
+                      var getFormData = {
+                        dates: {
+                          start: $("#date_from").val(),
+                          end: $("#date_to").val()
+                        }
+                      };
+
+                      //Function to filter the result
+                      var filteredData = dateFilterer(value, getFormData.dates.start, getFormData.dates.end);
+                      var data = filteredData.finalValues
+                      var Table = document.getElementById("mytable");
+              Table.innerHTML = "";
+                      for (var i = 0; i < data.length; i++) {
+                        var tr = $('<	<tr class="row100 body"/>');
+                        tr.append('<td class= "cell100 column1" >' + key + "</td>");
+                        tr.append('<td class= "cell100 column2" >'+ data[i].date + "</td>");
+                        tr.append('<td class= "cell100 column3" >' + data[i].confirmed + "</td>");
+                        tr.append('<td class= "cell100 column4" >' + data[i].deaths + "</td>");
+                        tr.append('<td class= "cell100 column5" >' + data[i].recovered + "</td>");
+                          $('.table1').append(tr);
+
+
+                    };
+                    })
+
+              };
+              });
+
+              });
+              };
+              };
+              changeOrg();
+
+
+                  //Filter function to ensure that the final result set is within a particular range
+                  function dateFilterer(sourceValues, startDate, endDate) {
+
+                    /*Curtosy of the tutorial found here: https://www.w3schools.com/jsref/jsref_filter.asp*/
+                    function filterFunction_dates(sourceValue) {
+
+                      //Aim: To test if the tested date is valid within a particular range
+                      var rangeAcceptance = {
+                        minValid: new Date(sourceValue.date) >= new Date(startDate),
+                        maxValid: new Date(sourceValue.date) <= new Date(endDate)
+                      };
+
+                      var acceptanceResult; //boolean to determine if the relevant range specified is valid
+
+                      if (startDate != "" && endDate != "") {
+
+                        acceptanceResult = (rangeAcceptance.minValid && rangeAcceptance.maxValid);
+
+                      } else if (startDate != "") {
+
+                        acceptanceResult = rangeAcceptance.minValid;
+
+                      } else if (endDate != "") {
+
+                        acceptanceResult = rangeAcceptance.maxValid;
+
+                      } else {
+
+                        acceptanceResult = (1 == 1); //show all results if no specific range has been selected
+
+                      }
+
+                      return (acceptanceResult);
+
+                    }
+
+
+
+                    //Return the data for display
+                    return ({
+
+                      originalValues: sourceValues,
+                      finalValues: sourceValues.filter(filterFunction_dates)
+
+                    });
+
+                  }
+
+                  //Aim: Display json in a nicely formatted way
+                  function preview_json(data, target) {
+
+                    /*Curtosy of fellow fiddler: http://jsfiddle.net/unLSJ/*/
+                    var library = {};
+
+                    library.json = {
+                      replacer: function(match, pIndent, pKey, pVal, pEnd) {
+                        var key = '<span class=json-key>';
+                        var val = '<span class=json-value>';
+                        var str = '<span class=json-string>';
+                        var r = pIndent || '';
+                        if (pKey)
+                          r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
+                        if (pVal)
+                          r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
+                        return r + (pEnd || '');
+                      },
+                      prettyPrint: function(obj) {
+                        var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
+                        return JSON.stringify(obj, null, 3)
+                          .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
+                          .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                          .replace(jsonLine, library.json.replacer);
+                      }
+                    };
+
+                    //Show json in desired target
+                    target.html(library.json.prettyPrint(data));
+
+                  }
+                });
+                </script >
+
+                <div class="content">
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card ">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-body">
+                          <div class="table-responsive">
+                            <table class="table tablesorter " id="">
+                              <thead class=" text-primary">
+                                <tr>
+                                  <th>
+                                    Country
+                                  </th>
+                                  <th>
+                                    Date
+                                  </th>
+                                  <th>
+                                    Confirmed
+                                  </th>
+                                  <th >
+                                    Deaths
+                                  </th>
+                                  <th >
+                                    Recovred
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody id= "mytable" class='table1'>
+
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      </div>
+    </div>
+  </div>
+  </center>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Bensitel Abdelhamid 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<script >
+< !-- End Navbar -- > var value;
+            var b;
+    $(document).ready(function() {
+
+    var s = document.getElementsByName('ar')[0];
+            s.addEventListener("change", changeOrg);
+            function changeOrg(){
+            var Table = document.getElementById("mytable");
+                    Table.innerHTML = "";
+                    if (s.options[s.selectedIndex] != null)
+            {
+            var val = s.options[s.selectedIndex].value;
+                    console.log(val);
+                    //on page load
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
+                    (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                    /*Dummy Data, Curtosy of: https://www.generatedata.com/*/
+                    $.getJSON("https://pomber.github.io/covid19/timeseries.json", function(Afghanistan) {
+                    var Table = document.getElementById("mytable");
+                            Table.innerHTML = "";
+                            $.each(Afghanistan, function(key, value) {
+
+                            if (key == val){
+                            for (var i = 0; i < value.length; i++) {
+                            var tr = $('<	<tr class="row100 body"/>');
+                                    tr.append('<td class= "cell100 column1" >' + key + "</td>");
+                                    tr.append('<td class= "cell100 column2" >' + value[i].date + "</td>");
+                                    tr.append('<td class= "cell100 column3" >' + value[i].confirmed + "</td>");
+                                    tr.append('<td class= "cell100 column4" >' + value[i].deaths + "</td>");
+                                    tr.append('<td class= "cell100 column5" >' + value[i].recovered + "</td>");
+                                    $('.table1').append(tr);
+                            };
+                                    $("#filter-button").click(function(e) {
+
+
+                            //Thank You Jesus!!!!!!!!
+
+                            //Gets the form data in a unified manner
+                            var getFormData = {
+                            dates: {
+                            start: $("#date_from").val(),
+                                    end: $("#date_to").val()
+                            }
+                            };
+                                    //Function to filter the result
+                                    var filteredData = dateFilterer(value, getFormData.dates.start, getFormData.dates.end);
+                                    var data = filteredData.finalValues
+                                    var Table = document.getElementById("mytable");
+                                    Table.innerHTML = "";
+                                    for (var i = 0; i < data.length; i++) {
+                            var tr = $('<	<tr class="row100 body"/>');
+                                    tr.append('<td class= "cell100 column1" >' + key + "</td>");
+                                    tr.append('<td class= "cell100 column2" >' + data[i].date + "</td>");
+                                    tr.append('<td class= "cell100 column3" >' + data[i].confirmed + "</td>");
+                                    tr.append('<td class= "cell100 column4" >' + data[i].deaths + "</td>");
+                                    tr.append('<td class= "cell100 column5" >' + data[i].recovered + "</td>");
+                                    $('.table1').append(tr);
+                            };
+                            })
+
+                            };
+                            });
+                    });
+            };
+            };
+            changeOrg();
+            //Filter function to ensure that the final result set is within a particular range
+                    function dateFilterer(sourceValues, startDate, endDate) {
+
+                    /*Curtosy of the tutorial found here: https://www.w3schools.com/jsref/jsref_filter.asp*/
+                    function filterFunction_dates(sourceValue) {
+
+                    //Aim: To test if the tested date is valid within a particular range
+                    var rangeAcceptance = {
+                    minValid: new Date(sourceValue.date) >= new Date(startDate),
+                            maxValid: new Date(sourceValue.date) <= new Date(endDate)
+                    };
+                            var acceptanceResult; //boolean to determine if the relevant range specified is valid
+
+                            if (startDate != "" && endDate != "") {
+
+                    acceptanceResult = (rangeAcceptance.minValid && rangeAcceptance.maxValid);
+                    } else if (startDate != "") {
+
+                    acceptanceResult = rangeAcceptance.minValid;
+                    } else if (endDate != "") {
+
+                    acceptanceResult = rangeAcceptance.maxValid;
+                    } else {
+
+                    acceptanceResult = (1 == 1); //show all results if no specific range has been selected
+
+                    }
+
+                    return (acceptanceResult);
+                    }
+
+
+
+                    //Return the data for display
+                    return ({
+
+                    originalValues: sourceValues,
+                            finalValues: sourceValues.filter(filterFunction_dates)
+
+                    });
+                    }
+
+            //Aim: Display json in a nicely formatted way
+            function preview_json(data, target) {
+
+            /*Curtosy of fellow fiddler: http://jsfiddle.net/unLSJ/*/
+            var library = {};
+                    library.json = {
+                    replacer: function(match, pIndent, pKey, pVal, pEnd) {
+                    var key = '<span class=json-key>';
+                            var val = '<span class=json-value>';
+                            var str = '<span class=json-string>';
+                            var r = pIndent || '';
+                            if (pKey)
+                            r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
+                            if (pVal)
+                            r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
+                            return r + (pEnd || '');
+                    },
+                            prettyPrint: function(obj) {
+                            var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
+                                    return JSON.stringify(obj, null, 3)
+                                    .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
+                                    .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                                    .replace(jsonLine, library.json.replacer);
+                            }
+                    };
+                    //Show json in desired target
+                    target.html(library.json.prettyPrint(data));
+            }
+            });
+                </script >
+                    
+                          
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="js/chart-pie-demo.js" type="text/javascript"></script>
+<script src="js/chart-area-demo.js" type="text/javascript"></script>
+<script src="js/chart-bar-demo.js" type="text/javascript"></script>
+<script src="js/chart-bar-demo.js" type="text/javascript"></script>
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="js/chart-area-demo.js" type="text/javascript"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="js/chart-pie-demo.js" type="text/javascript"></script>
+<script src="./assets/js/core/jquery.min.js"></script>
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/datatables-demo.js"></script>
+<script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="./assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="./assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+  <script src="./assets/demo/demo.js"></script>
+ <script>
+    $(document).ready(function() {
+         // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDbzTbk60LVx6Uvx3tZf5un_GG__bpBMRQ",
+    authDomain: "myproject-947f0.firebaseapp.com",
+    databaseURL: "https://myproject-947f0.firebaseio.com",
+    projectId: "myproject-947f0",
+    storageBucket: "myproject-947f0.appspot.com",
+    messagingSenderId: "511235025848",
+    appId: "1:511235025848:web:6feda3a3e3067e480cbd4d",
+    measurementId: "G-FYEEH5EWJH"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+      var a=0;
+      var b=0;
+      var c=0;
+      var d=0;
+      var ref=firebase.database().ref();
+      var t=[]
+    $.getJSON( "https://pomber.github.io/covid19/timeseries.json", function( dat ) {
+      $.each( dat, function(key, data) {
+          var usersRef1 = ref.child(key);
+
+        var usersRef = usersRef1.child(data[data.length-1].date);
+        usersRef.set({
+          cases:data[data.length-1].confirmed,
+          deaths:data[data.length-1].deaths,
+          recovered:data[data.length-1].recovered,})
+      const collection = data.map(x => ({ ...x, date: x.date.split("-"), confirmed: Number(x.confirmed)}));
+
+        const mapDayToMonth = collection.map(x => ({...x, date: new Date(x.date).getMonth()}));
+
+
+        var sumPerMonth = mapDayToMonth.reduce((acc, cur) => {
+          acc[cur.date] = acc[cur.date] + cur.Confirmed || cur.confirmed; // increment or initialize to cur.value
+          return acc;
+        }, {})
+        var tab=[];$.each( sumPerMonth, function(key, value) {  tab.push(value);});console.log(tab)
+        a=a+tab[0]
+        b=b+tab[1];
+        c=c+tab[2]
+        d=d+tab[3]
+        });
+      
+      var s = document.getElementsByName('ar')[0];
+      s.addEventListener("change", changeOrg);
+var snip=[]
+      function changeOrg(){
+        if (s.options[s.selectedIndex]!=null)
+        {
+          var val = s.options[s.selectedIndex].value;
+
+      //on page load
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36251023-1']);
+      _gaq.push(['_setDomainName', 'jqueryscript.net']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+      $.each( dat, function(key, data) {
+        if(key==val){
+          snip=[]
+      const collection = data.map(x => ({ ...x, date: x.date.split("-"), confirmed: Number(x.confirmed)}));
+
+        const mapDayToMonth = collection.map(x => ({...x, date: new Date(x.date).getMonth()}));
+
+
+        var sumPerMonth = mapDayToMonth.reduce((acc, cur) => {
+          acc[cur.date] = acc[cur.date] + cur.Confirmed || cur.confirmed; // increment or initialize to cur.value
+          return acc;
+        }, {})
+        var tab=[];$.each( sumPerMonth, function(key, value) {  tab.push(value);});console.log(tab[3])
+
+        snip.push(tab[3])
+         var collection1 = data.map(x => ({ ...x, date: x.date.split("-"), recovered: Number(x.recovered)}));
+
+          var  mapDayToMonth1 = collection.map(x => ({...x, date: new Date(x.date).getMonth()}));
+
+
+           var sumPerMonth1 = mapDayToMonth.reduce((acc, cur) => {
+            acc[cur.date] = acc[cur.date] +cur.recovered|| cur.recovered; // increment or initialize to cur.value
+            return acc;
+          }, {})
+          var tab1=[];$.each( sumPerMonth1, function(key, value) {  tab1.push(value);});
+          snip.push(tab1[3])
+          var collection2 = data.map(x => ({ ...x, date: x.date.split("-"), deaths: Number(x.deaths)}));
+
+           var  mapDayToMonth2 = collection.map(x => ({...x, date: new Date(x.date).getMonth()}));
+
+
+            var sumPerMonth2 = mapDayToMonth.reduce((acc, cur) => {
+             acc[cur.date] = acc[cur.date] +cur.deaths || cur.deaths; // increment or initialize to cur.value
+             return acc;
+           }, {})
+           var tab2=[];$.each( sumPerMonth2, function(key, value) {  tab2.push(value);});console.log(tab2[3])
+           snip.push(tab2[3])
+           console.log(snip)
+
+
+}
+});
+}
+
+
+
+
+ console.log("red" +snip)
+
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Confirmed', 'Recovred', 'Death'],
+          datasets: [{
+            label: '# confirmed',
+            data: snip,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+         	//cutoutPercentage: 40,
+          responsive: false,
+        }
+        });
+        };
+        changeOrg()
+        snip=[];
+        });
+});
+     
+  </script>
+    <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+  <script>
+   fetch("https://api.coronastatistics.live/all").then(function(response){
+        return response.json();
+    }).then(function(obj){
+            var confirmed=obj.cases;
+            var recovered=obj.recovered;
+            var death=obj.deaths;
+            $('#confirmed').html(confirmed);
+            $('#recovered').html(recovered);
+            $('#d').html(death)
+        })
+        
+    </script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  
+</body>
+
+</html>
