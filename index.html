@@ -180,10 +180,10 @@
                   </div>
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i>Cases
+                      <i class="fas fa-circle text-danger"></i>Deaths
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Deaths
+                      <i class="fas fa-circle text-success"></i> Confirmed
                     </span>
                     <span class="mr-2">
                       <i class="fas fa-circle text-info"></i> Recovered
@@ -261,13 +261,15 @@
                 <script src="js/countrypicker.js"></script>
                 <br>
                 <div class="btn btn-default" >
-                  <input id="date_from" type="date" placeholder="From" class="datepicker">
+                  <h5>Date Début</h5>
+                  <input id="date_debut" type="date" placeholder="From" class="datepicker">
                 </div>
                 <div class="btn btn-default">
-                  <input id="date_to" type="date" placeholder="To"  class="datepicker">
+                  <h5 style="text-align:left ">Date Fin</h5>
+                  <input id="date_fin" type="date" placeholder="To"  class="datepicker">
                 </div>
                 <br><br>
-                <button id="filter-button" class="btn btn-primary btn-block">Recherche</button>
+                <button id="recherche-button" class="btn btn-primary btn-block">Recherche</button>
               </div>
                 <!-- Navbar -->
                 <script >
@@ -313,13 +315,13 @@
                         tr.append('<td class= "cell100 column5" >' + value[i].recovered + "</td>");
                         $('.table1').append(tr);
                         };
-                    $("#filter-button").click(function(e) {
+                    $("#recherche-button").click(function(e) {
 
                       //formuler le type de data
                       var getFormData = {
                         dates: {
-                          start: $("#date_from").val(),
-                          end: $("#date_to").val()
+                          start: $("#date_debut").val(),
+                          end: $("#date_fin").val()
                         }
                       };
 
@@ -378,6 +380,7 @@
                     return ({
                       originalValues: currentValue,
                       finalValues: currentValue.filter(rechercheFunction_dates)
+                      //filter() does not change the original array.
 
                     });
 
@@ -525,7 +528,7 @@
         //variable contient les clés recuperer par lapi
           var usersRef1 = ref.child(key);
 
-        //variable contient les donnees de chaque clé recuperer par lapi
+        //variable contient les donnees de chaque clé 
         var usersRef = usersRef1.child(data[data.length-1].date);
 
         //writing in firebase,
