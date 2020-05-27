@@ -32,13 +32,13 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Afrique", "Amerique", "Asie", "Australie", "Europe"],
+    labels: ["Africa", "South America", "Asia", "North America", "Europe","Oceania"],
     datasets: [{
       label: "Cases",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "4e73df",
-      data: [5431, 188530, 110458, 5003, 419641],
+      data: [118111, 656612, 985512, 1905446, 1916541,8734],
     }],
   },
   options: {
@@ -57,8 +57,8 @@ var myBarChart = new Chart(ctx, {
           unit: 'cases'
         },
         gridLines: {
-          display: false,
-          drawBorder: false
+          display: true,
+          drawBorder: true
         },
         ticks: {
           maxTicksLimit: 6
@@ -68,7 +68,7 @@ var myBarChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
+          max: 2000000,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks
@@ -98,7 +98,7 @@ var myBarChart = new Chart(ctx, {
       borderWidth: 1,
       xPadding: 15,
       yPadding: 15,
-      displayColors: false,
+      displayColors: true,
       caretPadding: 10,
       callbacks: {
         label: function(tooltipItem, chart) {
