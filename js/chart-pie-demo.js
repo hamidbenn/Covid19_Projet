@@ -1,73 +1,46 @@
-
-
-    $(document).ready(function() {
-
-    fetch("https://covid19.mathdro.id/api/")
-  .then(response => response.json())
-  .then(data => {
-            doghnut(data);
-  });
-  function doghnut(data){
-  var ctx = document.getElementById("myPieChart");
-      var myChart = new Chart(ctx, {
-      type: 'doughnut',
+$(document).ready(function () {
+  fetch("https://covid19.mathdro.id/api/")
+    .then((response) => response.json())
+    .then((data) => {
+      Piechart(data);
+    });
+  function Piechart(data) {
+    var ctx = document.getElementById("myPieChart");
+    var myPieChart = new Chart(ctx, {
+      type: "pie",
       data: {
+        labels: ["recovered", "deaths", "confirmed"],
         datasets: [
           {
-            label: "My First dataset",
-            data: [ data.recovered.value, data.deaths.value,data.confirmed.value],
-            backgroundColor: [
-              '#fa4251',
-              '#00b5e9',
-              '#00ad5f'
+            data: [
+              data.recovered.value,
+              data.deaths.value,
+              data.confirmed.value,
             ],
-            hoverBackgroundColor: [
-              '#fa4251',
-              '#00b5e9',
-              '#00ad5f'
-            ],
-            borderWidth: [
-              0, 0
-            ],
-            hoverBorderColor: [
-              'transparent',
-              'transparent'
-            ]
-          }
+            backgroundColor: ["#4e73df", "#1cc88a", "#36b9cc"],
+            hoverBackgroundColor: ["#2e59d9", "#17a673", "#2c9faf"],
+            hoverBorderColor: "rgba(234, 236, 244, 1)",
+          },
         ],
-        labels: [
-          'Deaths',
-          'Recovered',
-          'Confirmed'
-        ]
       },
       options: {
         maintainAspectRatio: false,
-        responsive: true,
-        cutoutPercentage: 87,
-        animation: {
-          animateScale: true,
-          animateRotate: true
+        tooltips: {
+          backgroundColor: "rgb(255,255,255)",
+          bodyFontColor: "#858796",
+          borderColor: "#dddfeb",
+          borderWidth: 1,
+          xPadding: 15,
+          yPadding: 15,
+          displayColors: false,
+          caretPadding: 10,
         },
         legend: {
-          display: false,
-          position: 'bottom',
-          labels: {
-            fontSize: 14,
-            fontFamily: "Poppins,sans-serif"
-          }
-
+          display: true,
         },
-        tooltips: {
-          titleFontFamily: "Poppins",
-          xPadding: 15,
-          yPadding: 10,
-          caretPadding: 0,
-          bodyFontSize: 16,
-        }
-      }
+        cutoutPercentage: 80,
+      },
     });
-  
-}
- });
-    
+  }
+});
+
