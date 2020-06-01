@@ -178,17 +178,6 @@
                   <div class="chart-pie pt-4 pb-2">
                     <canvas id="myPieChart"></canvas>
                   </div>
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-danger"></i>Deaths
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Confirmed
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Recovered
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -273,7 +262,7 @@
               </div>
                 <!-- Navbar -->
                 <script >
-                <!-- End Navbar -->  var value;
+                var value;
                   var b;
                   $(document).ready(function() {
                     //afficher les donnees dans le tableau
@@ -294,12 +283,6 @@
                   _gaq.push(['_setDomainName', 'jqueryscript.net']);
                   _gaq.push(['_trackPageview']);
 
-                  (function() {
-                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                  })();
-                  /*Dummy Data, Curtosy of: https://www.generatedata.com/*/
                   $.getJSON( "https://pomber.github.io/covid19/timeseries.json", function( Afghanistan ) {
                     var Table = document.getElementById("mytable");
               Table.innerHTML = "";
@@ -528,7 +511,7 @@
         //variable contient les clés recuperer par lapi
           var usersRef1 = ref.child(key);
 
-        //variable contient les donnees de chaque clé 
+        //variable contient les donnees de chaque clé(date) 
         var usersRef = usersRef1.child(data[data.length-1].date);
 
         //writing in firebase,
@@ -537,121 +520,77 @@
           deaths:data[data.length-1].deaths,
           recovered:data[data.length-1].recovered,})
 
-      const collection = data.map(x => ({ ...x, date: x.date.split("-"), confirmed: Number(x.confirmed)}));
+      const map = data.map(x => ({ ...x, date: x.date.split("-"), confirmed: Number(x.confirmed)}));
 
-        const mapDayToMonth = collection.map(x => ({...x, date: new Date(x.date).getMonth()}));
+        const getmonth = map.map(x => ({...x, date: new Date(x.date).getMonth()}));
 
 
-        var sumPerMonth = mapDayToMonth.reduce((acc, cur) => {
-          acc[cur.date] = acc[cur.date] + cur.Confirmed || cur.confirmed; // increment or initialize to cur.value
+        var sumPerMonth = getmonth.reduce((acc, cur) => {
+          acc[cur.date] = acc[cur.date] + cur.Confirmed || cur.confirmed; 
+          // initialisation de l'accumulateur et incrementer le current value et lui ajouter a l'acc pour chaque valeur
           return acc;
         }, {})
-          var t=[]
-         var a=0;
-         var b=0;
-         var c=0;
-         var d=0;
+         
         var tab=[];
         $.each( sumPerMonth, function(key, value) {  tab.push(value);});console.log(tab)
-        a=a+tab[0]
-        b=b+tab[1];
-        c=c+tab[2]
-        d=d+tab[3]
+        
         });
+      
       //afficher les donnees dans le graphe
       var s = document.getElementsByName('country')[0];
       s.addEventListener("change", changeOrg);
 var datatotal=[]
+var confirmedcases
+var recoveredcases
       function changeOrg(){
         if (s.options[s.selectedIndex]!=null)
         {
           var val = s.options[s.selectedIndex].value;
 
-      //on page load
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-36251023-1']);
-      _gaq.push(['_setDomainName', 'jqueryscript.net']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-      $.each( dat, function(key, data) {
+          //si la cle des donnees retourn par lapi est egale al la cle de select
+            $.each( dat, function(key, data) {
         if(key==val){
           //tableau qui contient datatotal pour les mettre dans le graphe
           datatotal=[]
            // creer un nouveau array avec le result de la fonction appellée pour chaque array element 
           //pour nous faire la somme des 3 result
-      const collection = data.map(x => ({ ...x, date: x.date.split("-"), confirmed: Number(x.confirmed)}));
 
-        const mapDayToMonth = collection.map(x => ({...x, date: new Date(x.date).getMonth()}));
+          /////confirmed 
+      const mapping = data.map(x => ({ ...x, date: x.date.split("-"), confirmed: Number(x.confirmed)}));
 
+        const mapDayToMonth = mapping.map(x => ({...x, date: new Date(x.date).getMonth()}));
 
+        //reduce methode pour regrouper toute les valeures en un seule
         var sumPerMonth = mapDayToMonth.reduce((acc, cur) => {
-          acc[cur.date] = acc[cur.date] + cur.Confirmed || cur.confirmed; // increment or initialize to cur.value
+          acc[cur.date] = acc[cur.date] + cur.Confirmed || cur.confirmed; 
+          // initialisation de l'accumulateur et incrementer le current value et lui ajouter a l'acc pour chaque valeur
           return acc;
         }, {})
-        var tab=[];$.each( sumPerMonth, function(key, value) {  tab.push(value);});console.log(tab[3])
+        
+        var tab=[];$.each( sumPerMonth, function(key, value) {  tab.push(value);});console.log(tab[4])
 
-        datatotal.push(tab[3])
-         var collection1 = data.map(x => ({ ...x, date: x.date.split("-"), recovered: Number(x.recovered)}));
-
-          var  mapDayToMonth1 = collection.map(x => ({...x, date: new Date(x.date).getMonth()}));
-
-
-           var sumPerMonth1 = mapDayToMonth.reduce((acc, cur) => {
-            acc[cur.date] = acc[cur.date] +cur.recovered|| cur.recovered; // increment or initialize to cur.value
-            return acc;
-          }, {})
-          var tab1=[];$.each( sumPerMonth1, function(key, value) {  tab1.push(value);});
-          datatotal.push(tab1[3])
-          var collection2 = data.map(x => ({ ...x, date: x.date.split("-"), deaths: Number(x.deaths)}));
-
-           var  mapDayToMonth2 = collection.map(x => ({...x, date: new Date(x.date).getMonth()}));
-
-
-            var sumPerMonth2 = mapDayToMonth.reduce((acc, cur) => {
-             acc[cur.date] = acc[cur.date] +cur.deaths || cur.deaths; // increment or initialize to cur.value
-             return acc;
-           }, {})
-           var tab2=[];$.each( sumPerMonth2, function(key, value) {  tab2.push(value);});console.log(tab2[3])
-           datatotal.push(tab2[3])
-           console.log(datatotal)
-
+        datatotal.push(tab[4])
+      
 
 }
 });
 }
 
 
-var dynamicColors = function() {
-                    var r = Math.floor(Math.random() * 255);
-                    var g = Math.floor(Math.random() * 255);
-                    var b = Math.floor(Math.random() * 255);
-                    return "rgb(" + r + "," + g + "," + b + ")";
-                 };  
 
       var ctx = document.getElementById("myChart");
       if(myChart && myChart !== null){
-        myChart.destroy();
+        myChart.destroy()
     }
       var myChart = new Chart(ctx, {
-        type: 'pie',
+        type: 'bar',  
         data: {
-          labels: ['Recovered', 'Confirmed', 'Death'],
+          labels: ['Confirmed'],
           datasets: [{
-            label: '# confirmed',
+            label: ' confirmed',
             data: datatotal,
-            backgroundColor: [
-              dynamicColors(),
-              dynamicColors(),
-              dynamicColors()
-            ],
-            borderColor: 
-              dynamicColors(),
-              
+            backgroundColor: "rgb(44,2,171)",
+            borderColor: "rgb(44,2,171)",              
             borderWidth: 1
           }]
         },
